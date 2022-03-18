@@ -19,7 +19,7 @@
       font-size: 50px;
     }
     .logo {
-
+      
       -webkit-animation:spin 4s linear infinite;
       -moz-animation:spin 4s linear infinite;
       animation:spin 4s linear infinite;
@@ -28,7 +28,7 @@
     @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
     @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
     @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
-
+ 
    .container{
 		width: 90%;
 		padding: 20px;
@@ -37,7 +37,7 @@
 		flex-direction: row;
 		justify-content: center;
 	}
-
+	
 
 	.box{
 		width: 250px;
@@ -66,13 +66,16 @@
   </div>
 <div class="container">
 		<div class="box">
-			   <a href="https://discord.gg/Rd3JyzZyCP"><img src="IMG/Proxy.png" align="right"></a>
+			   <a href="https://discord.gg/Rd3JyzZyCP"><img src="IMG/Proxy"></a>
 		</div>
 	<div class="box">
-			   <a href="https://discord.gg/Rd3JyzZyCP"><img src="IMG/gaming.jpg" align="middle"></a>
+			   <a href="Websites/index.html"><img src="IMG/gaming.png"></a>
 		</div>
 
-
-
+<script>
+window.addEventListener('beforeunload', (event) => {
+  event.returnValue = `Are you sure you want to leave?`;
+});
+	</script>
 
 </body>
