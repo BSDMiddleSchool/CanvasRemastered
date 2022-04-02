@@ -1,87 +1,65 @@
-:root {
-  --bg-color: hsl(49 37% 94%);
-  --typewriterSpeed: 6s;
-  --typewriterCharacters: 24;
-}
-
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
   margin: 0;
-  font-family: "Source Sans Pro", sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
-  display: grid;
-  place-content: center;
-  text-align: center;
-  background: var(--bg-color);
+  background: #343F4F;
 }
-
-h1 {
-  font-size: clamp(1rem, 3vw + 1rem, 4rem);
-  position: relative;
-  font-family: "Source Code Pro", monospace;
-  position: relative;
-  width: max-content;
+.wrapper{
+  display: flex;
 }
-
-h1::before,
-h1::after {
+.wrapper .static-txt{
+  color: #fff;
+  font-size: 60px;
+  font-weight: 400;
+}
+.wrapper .dynamic-txts{
+  margin-left: 15px;
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+.dynamic-txts li{
+  list-style: none;
+  color: #FC6D6D;
+  font-size: 60px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: slide 12s steps(4) infinite;
+}
+@keyframes slide {
+  100%{
+    top: -360px;
+  }
+}
+.dynamic-txts li span{
+  position: relative;
+  margin: 5px 0;
+  line-height: 90px;
+}
+.dynamic-txts li span::after{
   content: "";
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
-}
-
-h1::before {
-  background: var(--bg-color);
-  animation: typewriter var(--typewriterSpeed)
-    steps(var(--typewriterCharacters)) 1s forwards;
-}
-
-h1::after {
-  width: 0.125em;
-  background: black;
-  animation: typewriter var(--typewriterSpeed)
-      steps(var(--typewriterCharacters)) 1s forwards,
-    blink 750ms steps(var(--typewriterCharacters)) infinite;
-}
-
-.subtitle {
-  color: hsl(0 0% 0% / 0.7);
-  font-size: 2rem;
-  font-weight: 400;
-  opacity: 0;
-  transform: translateY(3rem);
-  animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
-}
-
-@keyframes typewriter {
-  to {
-    left: 100%;
-  }
-}
-
-@keyframes blink {
-  to {
-    background: transparent;
-  }
-}
-
-@keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-#yt-link {
-  position: absolute;
-  bottom: 2em;
+  height: 100%;
   width: 100%;
-  color: hsl(0 0 0 / 0.7);
-
-  &:hover,
-  &:focus {
-    color: teal;
+  background: #343F4F;
+  border-left: 2px solid #FC6D6D;
+  animation: typing 3s steps(10) infinite;
+}
+@keyframes typing {
+  40%, 60%{
+    left: calc(100% + 30px);
+  }
+  100%{
+    left: 0;
   }
 }
