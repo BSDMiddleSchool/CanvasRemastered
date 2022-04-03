@@ -1,5 +1,5 @@
 :root {
-  --bg-color: hsl(0 0% 0%);
+  --bg-color: hsl(0 100% 0%);
   --typewriterSpeed: 3s;
   --typewriterCharacters: 24;
 }
